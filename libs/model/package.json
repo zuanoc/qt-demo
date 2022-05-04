@@ -1,0 +1,37 @@
+{
+  "name": "@qt-demo/model",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "private": true,
+  "scripts": {
+    "proto-gen": "sh proto-gen.sh",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "lint": "eslint \"{src,apps,libs,test,lib}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test,lib}/**/*.ts\" --fix"
+  },
+  "dependencies": {
+    "long": "^5.2.0",
+    "nice-grpc-web": "^1.0.8",
+    "protobufjs": "^6.11.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/node": "^14.14.31",
+    "grpc-tools": "^1.11.2",
+    "grpc_tools_node_protoc_ts": "^5.3.2",
+    "rollup": "^2.41.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-proto": "^1.112.0",
+    "ts-protoc-gen": "^0.15.0"
+  }
+}

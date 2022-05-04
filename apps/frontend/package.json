@@ -1,0 +1,50 @@
+{
+  "name": "@qt-demo/frontend",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion"
+    }
+  },
+  "scripts": {
+    "proto-gen": "sh proto-gen.sh",
+    "start": " parcel public/index.html --open --port 9090",
+    "build": "parcel build public/index.html --no-minify",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@improbable-eng/grpc-web": "^0.15.0",
+    "@qt-demo/model": "*",
+    "immer": "^9.0.12",
+    "konva": "^8.3.6",
+    "nice-grpc-web": "^1.0.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-konva": "^17.0.2-6",
+    "rx-from-async-iterator": "^1.5.5",
+    "rxjs": "^7.5.5",
+    "rxjs-for-await": "^1.0.0",
+    "use-image": "^1.0.12",
+    "zustand": "^3.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/runtime": "^7.17.9",
+    "@emotion/babel-plugin-jsx-pragmatic": "^0.1.5",
+    "@types/node": "^17.0.31",
+    "@types/react": "^17.0.21",
+    "@types/react-dom": "^17.0.9",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-twin": "^1.0.2",
+    "parcel-bundler": "^1.12.4",
+    "tailwindcss": "^2.2.15",
+    "twin.macro": "^2.7.0",
+    "typescript": "^4.4.3"
+  }
+}

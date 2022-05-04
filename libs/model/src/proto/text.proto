@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package hero;
+
+service TextService {
+  rpc connection(stream UserAction) returns (stream UserAction);
+}
+
+message UserText {
+  string id = 1;
+  int32 x = 2;
+  int32 y = 3;
+  int32 w = 4;
+  int32 h = 5;
+  string color = 6;
+  string text = 7;
+  string userId = 8;
+}
+
+message NewInputAction {
+  string id = 1;
+  int32 x = 2;
+  int32 y = 3;
+  int32 w = 4;
+  int32 h = 5;
+  string color = 6;
+}
+
+message TextTypingAction {
+  string id = 1;
+  string type = 2;
+}
+
+message TextSaveAction {
+  string id = 1;
+}
+
+message TextCancelAction {
+  string id = 1;
+}
+
+message UserDeletionAction {
+  string userId = 1;
+}
+
+message FetchAllAction {
+  repeated UserText texts = 1;
+}
+
+enum ActionType {
+  NEW_INPUT = 0;
+  TEXT_TYPING = 1;
+  TEXT_SAVE = 2;
+  TEXT_CANCEL = 3;
+  FETCH_ALL = 4;
+  USER_DELETION = 5;
+}
+
+message UserAction {
+  string userId = 1;
+  optional ActionType type = 2;
+  optional NewInputAction newInputAction = 3;
+  optional TextTypingAction textTypingAction = 4;
+  optional TextSaveAction textSaveAction = 5;
+  optional TextCancelAction textCancelAction = 6;
+  optional FetchAllAction fetchAllAction = 7;
+  optional UserDeletionAction userDeletionAction = 8;
+}
