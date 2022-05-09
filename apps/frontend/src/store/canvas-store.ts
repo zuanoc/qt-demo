@@ -82,7 +82,7 @@ const canvasStoreSlice = (
       set(
         produce<CanvasSlice>(state => {
           const texts = fetchAllAction.texts.map(t => ({
-            userId: action.userId,
+            userId: t.userId,
             id: t.id,
             text: t.text,
             x: t.x,
